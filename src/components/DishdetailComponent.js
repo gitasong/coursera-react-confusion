@@ -6,6 +6,7 @@ class DishDetail extends Component {
   render() {
     const { dish } = this.props;
 
+    if (dish != null) {
       return(
         <div className="row">
           <div className="dishDetail col-12 col-md-5 m-1">
@@ -22,6 +23,11 @@ class DishDetail extends Component {
           </div>
         </div>
       );
+    } else {
+      return(
+        <div></div>
+      );
+    }
   }
 }
 
