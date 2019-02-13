@@ -17,6 +17,9 @@ class DishDetail extends Component {
               </CardBody>
             </Card>
           </div>
+          <div className="comments col-12 col-md-5 m-1">
+            {/* comments go here */}
+          </div>
         </div>
       );
   }
