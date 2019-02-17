@@ -3,6 +3,18 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class DishDetail extends Component {
 
+  renderDish(dish) {
+    return(
+      <Card dish={dish}>
+        <CardImg width="100%" src={dish.image} alt={dish.name} />
+        <CardBody>
+          <CardTitle>{dish.name}</CardTitle>
+          <CardText>{dish.description}</CardText>
+        </CardBody>
+      </Card>
+    );
+  }
+
   render() {
     const { dish } = this.props;
 
@@ -10,13 +22,7 @@ class DishDetail extends Component {
       return(
         <div className="row">
           <div className="dishDetail col-12 col-md-5 m-1">
-            <Card dish={dish}>
-              <CardImg width="100%" src={dish.image} alt={dish.name} />
-              <CardBody>
-                <CardTitle>{dish.name}</CardTitle>
-                <CardText>{dish.description}</CardText>
-              </CardBody>
-            </Card>
+            {this.renderDish(dish)}
           </div>
           <div className="comments col-12 col-md-5 m-1">
             {/* comments go here */}
