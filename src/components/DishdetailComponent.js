@@ -15,6 +15,25 @@ class DishDetail extends Component {
     );
   }
 
+  renderComments(comments) {
+    if (comments != null) {
+      comments.map((comment) => {
+        console.log(`${comment.comment} ${comment.author} ${comment.date}`);
+
+        return(
+          <li key={comment.id}>
+            <p>{comment.comment}</p>
+            <p>—{comment.author} {comment.date}</p>
+        </li>
+        );
+      });
+    } else {
+      return(
+        <div></div>
+      );
+    }
+  }
+
   render() {
     const { dish } = this.props;
 
@@ -26,6 +45,10 @@ class DishDetail extends Component {
           </div>
           <div className="comments col-12 col-md-5 m-1">
             {/* comments go here */}
+            <h4>Comments</h4>
+            <ul className="list-unstyled">
+              {this.renderComments(comments)}
+            </ul>
           </div>
         </div>
       );
