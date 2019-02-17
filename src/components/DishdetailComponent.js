@@ -36,6 +36,10 @@ class DishDetail extends Component {
 
   render() {
     const { dish } = this.props;
+    console.log(`dish: ${dish.name}`);
+    const comments = dish.comments;
+    console.log(`typeof comments: ${typeof comments}`);
+    console.log(`comments: ${comments}`);
 
     if (dish != null) {
       return(
