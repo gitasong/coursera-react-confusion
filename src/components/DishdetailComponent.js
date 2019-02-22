@@ -15,18 +15,16 @@ class DishDetail extends Component {
     );
   }
 
-  renderComments(comments) {
-    if (comments != null) {
-      comments.map((comment) => {
-        console.log(`${comment.comment} ${comment.author} ${comment.date}`);
-
-        return(
-          <li key={comment.id}>
-            <p>{comment.comment}</p>
-            <p>—{comment.author} {comment.date}</p>
+  renderComments(_comments) {
+    const renderedComments = _comments.map((comment) =>
+        <li key={comment.id}>
+          <p>{comment.comment}</p>
+          <p>—{comment.author} {comment.date}</p>
         </li>
-        );
-      });
+    );
+
+    if (_comments != null) {
+      return renderedComments;
     } else {
       return(
         <div></div>
