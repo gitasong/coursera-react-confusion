@@ -37,9 +37,9 @@ class DishDetail extends Component {
   render() {
     const { dish } = this.props;
     console.log(`dish: ${dish.name}`);
-    const comments = dish.comments;
-    console.log(`typeof comments: ${typeof comments}`);
-    console.log(`comments: ${comments}`);
+    const dishComments = dish.comments;
+    console.log(`typeof comments: ${typeof dishComments}`);
+    console.log(`comments: ${dishComments}`);
 
     if (dish != null) {
       return(
@@ -51,7 +51,8 @@ class DishDetail extends Component {
             {/* comments go here */}
             <h4>Comments</h4>
             <ul className="list-unstyled">
-              {this.renderComments(comments)}
+              {console.log(`dishComments before renderComments: ${dishComments}`)}
+              {this.renderComments(dishComments)}
             </ul>
           </div>
         </div>
